@@ -2,7 +2,8 @@
 const apiKey = 'AIzaSyAhzb74zCJ6VYa39BnCyy7ORtJp7cyWPCA';
 // const sheetId = 'TU_SHEET_ID';
 const sheetId = '1iVVnO9rtg_h5BD2ZacX6R_vPYbRNyCnRLCB4rBp_Epg';
-const sheetName = 'datos';
+// https://docs.google.com/spreadsheets/d/1iVVnO9rtg_h5BD2ZacX6R_vPYbRNyCnRLCB4rBp_Epg/edit?usp=sharing
+const sheetName = 'misdatos';
 
 document.getElementById('formulario').addEventListener('submit', async function (e) {
     e.preventDefault();
