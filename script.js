@@ -5,7 +5,6 @@ const sheetName = 'misdatos';
 const sheetId = '1iVVnO9rtg_h5BD2ZacX6R_vPYbRNyCnRLCB4rBp_Epg';
 // https://docs.google.com/spreadsheets/d/1iVVnO9rtg_h5BD2ZacX6R_vPYbRNyCnRLCB4rBp_Epg/edit?usp=sharing
 
-
 document.getElementById('formulario').addEventListener('submit', async function (e) {
     e.preventDefault();
 
@@ -18,9 +17,15 @@ document.getElementById('formulario').addEventListener('submit', async function 
         if (!response.ok) {
             throw new Error('Error al obtener los datos de la hoja de Google Sheets');
         }
-        const data = await response.json();
-        const rows = data.values;
 
+        const data = await response.json();
+        console.log('Datos recibidos de Google Sheets:', data);
+
+        if (!data.values) {
+            throw new Error('No se encontraron valores en la respuesta de Google Sheets');
+        }
+
+        const rows = data.values;
         let found = false;
         for (let i = 1; i < rows.length; i++) {
             if (rows[i][0] === documento) {
